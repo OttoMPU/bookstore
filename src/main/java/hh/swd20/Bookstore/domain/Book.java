@@ -12,7 +12,7 @@ public class Book {
 	private Long id;
 	
 	private String title, author, isbn;
-	private double price;
+	private int year;
 	
 	public Book() {
 		super();
@@ -20,24 +20,24 @@ public class Book {
 		this.title = null;
 		this.author = null;
 		this.isbn = null;
-		this.price = 0;
+		this.year = 0;
 	}
 	
-	public Book(Long id, String title, String author, String isbn, double price) {
+	public Book(Long id, String title, String author, String isbn, int year) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
-		this.price = price;
+		this.year = year;
 	}
 	
-	public Book( String title, String author, String isbn, double price) {
+	public Book( String title, String author, String isbn, int year) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.isbn = isbn;
-		this.price = price;
+		this.year = year;
 	}
 	
 	
@@ -89,14 +89,14 @@ public class Book {
 
 
 
-	public double getPrice() {
-		return price;
+	public int getYear() {
+		return year;
 	}
 
 
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setYear(int year) {
+		this.year = year;
 	}
 	
 }
