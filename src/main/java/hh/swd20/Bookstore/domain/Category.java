@@ -11,32 +11,32 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long categoryid;
 	
-	private String category;
+	private String categoryname;
 	
 	public Category() {
 		super();
 		this.categoryid = null;
-		this.category = null;
+		this.categoryname = null;
 	}
 	
-	public Category(Long categoryid, String category) {
+	public Category(Long categoryid, String categoryname) {
 		super();
 		this.categoryid =categoryid;
-		this.category = category;
+		this.categoryname = categoryname;
 	}
 	
-	public Category(String category) {
+	public Category(String categoryname) {
 		super();
-		this.category = category;
+		this.categoryname = categoryname;
 	}
 	
 	
-	public String getCategory() {
-		return category;
+	public String getCategoryname() {
+		return categoryname;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
 	
 	public Long getCategoryid() {
