@@ -18,30 +18,24 @@ public class BookstoreApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(BookRepository repository) {
+	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository) {
 		return (args) -> {
-			Book b1 = new Book("Turms kuolematon", "Mika Waltari", "123-0-20750-0", 1956);
-			Book b2 = new Book("Crime And Punishment", "Fyodor Dostoyevsky ", "0143058142", 1866);
 			
-			repository.save(b1);
-			repository.save(b2);
+			Category c1 = new Category("Fantasy");
+			Category c2 = new Category("Sci-fi");
+			Category c3 = new Category("Educational");
+			Category c4 = new Category("Historical");
+			
+			crepository.save(c1);
+			crepository.save(c2);
+			crepository.save(c3);
+			crepository.save(c4);
+			
+			
+			brepository.save(new Book("Turms kuolematon", "Mika Waltari", "123-0-20750-0", 1956, c1));
+			brepository.save(new Book("Crime And Punishment", "Fyodor Dostoyevsky", "0143058142", 1866, c4));
 			
 		};
-	}
-		
-		@Bean
-		public CommandLineRunner categorydemo(CategoryRepository repository) {
-			return (args) -> {
-				Category c1 = new Category("Fantasy");
-				Category c2 = new Category("Sci-fi");
-				Category c3 = new Category("Educational");
-				
-				repository.save(c1);
-				repository.save(c2);
-				repository.save(c3);
-				
-			};
-		
 	}
 	
 }

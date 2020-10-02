@@ -1,9 +1,15 @@
 package hh.swd20.Bookstore.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Category {
@@ -11,6 +17,10 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long categoryid;
 	
+	@JsonBackReference
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+	private List<Book> books;
+
 	private String categoryname;
 	
 	public Category() {
@@ -47,5 +57,12 @@ public class Category {
 		this.categoryid = categoryid;
 	}
 	
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
 	
 }
