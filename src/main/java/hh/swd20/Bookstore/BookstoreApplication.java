@@ -34,7 +34,7 @@ public class BookstoreApplication {
 			crepository.save(c4);
 			
 			
-			brepository.save(new Book("Turms kuolematon", "Mika Waltari", "123-0-20750-0", 1956, c1));
+			brepository.save(new Book("Turms Kuolematon", "Mika Waltari", "123-0-20750-0", 1956, c1));
 			brepository.save(new Book("Crime And Punishment", "Fyodor Dostoyevsky", "0143058142", 1866, c4));
 			
 			User user1 = new User("user", "$2a$04$evu5Qu.514/TiM9MPx9rcuN0WQ7mubbirrXqDkbOvEM5hS/j9/Wj2", "USER");
